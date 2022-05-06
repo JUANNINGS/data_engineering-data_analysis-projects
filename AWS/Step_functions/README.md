@@ -1,0 +1,1 @@
+For security reason, the "Resource" will not show in the "link_lambda_functions.json" file.
