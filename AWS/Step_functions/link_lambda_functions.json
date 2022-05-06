@@ -1,0 +1,54 @@
+{
+    "Comment": "Step function to run imba process", 
+    "StartAt": "remove_feature_files",
+    "States": {
+    "remove_feature_files": {
+    "Type": "Task",
+    "Resource": "",             
+    "ResultPath": "$.remove_feature_files",
+    "Next": "exe_query_order_products_prior", 
+    "TimeoutSeconds": 60
+  }, 
+    "exe_query_order_products_prior": {
+    "Type": "Task",
+    "Resource": "",
+    "ResultPath": "$.exe_query_order_products_prior", 
+    "Next": "exe_query_user_features_1", 
+    "TimeoutSeconds": 60
+  }, 
+    "exe_query_user_features_1": {
+    "Type": "Task",
+    "Resource": "",
+    "ResultPath": "$.exe_query_user_features_1", 
+    "Next": "exe_query_user_features_2", 
+    "TimeoutSeconds": 60
+  }, 
+    "exe_query_user_features_2": {
+    "Type": "Task",
+    "Resource": "",
+    "ResultPath": "$.exe_query_user_features_2", 
+    "Next": "exe_query_up_features", 
+    "TimeoutSeconds": 60
+  }, 
+    "exe_query_up_features": {
+    "Type": "Task",
+    "Resource": "",
+    "ResultPath": "$.exe_query_up_features", 
+    "Next": "exe_query_prd_features", 
+    "TimeoutSeconds": 60
+  }, 
+    "exe_query_prd_features": {
+    "Type": "Task",
+    "Resource": "",
+    "ResultPath": "$.exe_query_up_features", 
+    "Next": "exe_query_glue_job",
+    "TimeoutSeconds": 60
+  },
+    "exe_query_glue_job": {
+    "Type": "Task",
+    "Resource": "",
+    "ResultPath": "$.exe_query_glue_job", 
+    "TimeoutSeconds": 60,
+    "End": true}
+    }
+  }
